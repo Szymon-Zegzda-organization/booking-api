@@ -17,7 +17,11 @@ steps:
   inputs:
     version: '3.0.x'
     packageType: runtime
-    
+- task: CmdLine@2
+  inputs:
+    script: |
+      echo  '$(System.DefaultWorkingDirectory)'
+      dir    
 - task: DotNetCoreCLI@2
   inputs:
     command: 'restore'
