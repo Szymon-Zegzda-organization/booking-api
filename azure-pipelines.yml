@@ -34,9 +34,8 @@ steps:
     command: test
     projects: '**/*Tests/*.csproj'
 
-- script: dotnet test <test-project> --logger trx
 - task: PublishTestResults@2
-  condition: succeededOrFailed()
   inputs:
-    testRunner: VSTest
-    testResultsFiles: '**/*.trx'
+    testResultsFormat: 'NUnit' 
+    searchFolder: 'Booking.Server.test/'
+    testResultsFiles: '**/TEST-*.trx' 
