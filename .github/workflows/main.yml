@@ -26,9 +26,9 @@ jobs:
     - name: Build
       run: dotnet build --no-restore
     - name: Test
-      run: dotnet test --logger trx --results-directory "artifacts"
+      run: dotnet test --logger trx --results-directory "artifact"
     - name: Upload test logs
       uses: actions/upload-artifact@v3
       with:
-            name: artifacts
-            path: Booking.Server/artifacts.txt
+            name: artifact
+            path: Booking.Server/artifact
