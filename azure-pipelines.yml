@@ -39,7 +39,8 @@ steps:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
     ArtifactName: 'drop'
     publishLocation: 'Container'
-- task: PublishTestResults@2
+- task: PublishPipelineArtifact@1
   inputs:
-    testResultsFormat: 'NUnit'
-    testResultsFiles: '**/TEST-*.xml'
+    targetPath: '$(Pipeline.Workspace)'
+    artifact: 'artifac'
+    publishLocation: 'pipeline'
