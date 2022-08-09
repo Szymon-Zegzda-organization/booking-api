@@ -33,3 +33,4 @@ steps:
   inputs:
     command: test
     projects: '**/*Tests/*.csproj'
+    arguments: '--logger trx --results-directory "artifact"'
