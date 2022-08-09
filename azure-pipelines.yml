@@ -33,10 +33,11 @@ steps:
   inputs:
     command: test
     projects: '**/*Tests/*.csproj'
-    arguments: '--logger trx --collect "artifact"'
 
-- task: PublishPipelineArtifact@1
+- script: dotnet test Booking.Server.Test --logger trx
+- task: PublishTestResults@2
+  condition: succeededOrFailed()
   inputs:
-    artifactName: artifact
-
+    testRunner: VSTest
+    testResultsFiles: '**/*.trx'
 
