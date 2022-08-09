@@ -22,6 +22,9 @@ steps:
     packageType: runtime
 
 - task: DotNetCoreCLI@2
+  displayName: Restore
   inputs:
-    command: 'restore'
-    feedsToUse: 'select'
+    command: restore
+    projects: '**/*.csproj'
+    feedsToUse: config
+    
