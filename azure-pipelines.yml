@@ -32,13 +32,6 @@ steps:
 - task: DotNetCoreCLI@2
   inputs:
     command: test
-    projects: '**/*Tests/*.csproj'
-    arguments: '--configuration $(buildConfiguration) --logger trx --result-directory "TEST.trx"'
-    
-- task: PublishBuildArtifacts@1
-  inputs:
-    PathtoPublish: TEST.trx
-    ArtifactName: "artifacts"
-    publishLocation: "container"
-    
+    projects: '/Bookig.Server.Test/*.csproj'
+
 
