@@ -17,14 +17,18 @@ jobs:
     steps:
         - uses: actions/checkout@v3
         - name: Setup dotnet
+          working-directory: Booking.Server/
           uses: actions/setup-dotnet@v2
           with:
             dotnet-version: ${{ matrix.dotnet-version }}
         - name: Install dependencies
+          working-directory: Booking.Server/
           run: dotnet restore
         - name: Test with dotnet
+          working-directory: Booking.Server/
           run: dotnet test --logger trx --results-directory "TestResults-${{ matrix.dotnet-version }}"
         - name: Upload dotnet test results
+          working-directory: Booking.Server/
           uses: actions/upload-artifact@v3
           with:
             name: dotnet-results-${{ matrix.dotnet-version }}
