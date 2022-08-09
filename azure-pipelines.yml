@@ -8,7 +8,7 @@ variables:
   
 steps:
 - script: # script path or inline
-  workingDirectory: Booking.Service/
+  workingDirectory: Booking.Server/
   displayName: Set working directory
 
 - task: UseDotNet@2
