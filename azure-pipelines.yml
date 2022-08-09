@@ -34,8 +34,12 @@ steps:
     command: test
     projects: '**/*Tests/*.csproj'
     arguments: '--configuration $(buildConfiguration) --logger trx'
-- task: PublishTestResults@2
-  condition: succeededOrFailed()
+- task: PublishBuildArtifacts@1
   inputs:
-    testRunner: NUnit
-    testResultsFiles: '**/*.trx'
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: 'drop'
+    publishLocation: 'Container'
+- task: PublishTestResults@2
+  inputs:
+    testResultsFormat: 'NUnit'
+    testResultsFiles: '**/TEST-*.xml'
