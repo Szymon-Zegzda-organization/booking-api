@@ -1,3 +1,4 @@
+
 name: dotnet package
 
 on:
@@ -12,9 +13,8 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        dotnet-version: '6.0.x' 
-
-      steps:
+        dotnet-version: '6.0.x'
+    steps:
         - uses: actions/checkout@v3
         - name: Setup dotnet
           uses: actions/setup-dotnet@v2
