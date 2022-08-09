@@ -33,11 +33,13 @@ steps:
   inputs:
     command: test
     projects: '**/*Tests/*.csproj'
-    arguments: '--configuration $(buildConfiguration) --logger trx --result-directory "artifact"'
+    arguments: '--configuration $(buildConfiguration) --logger trx --result-directory "artifacts"'
 
 - task: PublishTestResults@2
   condition: succeededOrFailed()
   inputs:
     testRunner: VSTest
     testResultsFiles: '**/*.trx'
+- download: 
+  artifact: 'artifacts'
 
