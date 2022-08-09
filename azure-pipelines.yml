@@ -34,7 +34,6 @@ steps:
     command: test
     projects: '**/*Tests/*.csproj'
 
-- script: dotnet test Booking.Server.Test --logger trx
 - task: PublishTestResults@2
   condition: succeededOrFailed()
   inputs:
