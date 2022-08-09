@@ -38,4 +38,4 @@ steps:
   inputs:
     testResultsFormat: 'NUnit' 
     searchFolder: 'Booking.Server.test/'
-    testResultsFiles: '$(System.DefaultWorkingDirectory/TEST.trx' 
+    testResultsFiles: '$(System.DefaultWorkingDirectory)/TEST.trx' 
