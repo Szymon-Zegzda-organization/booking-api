@@ -7,7 +7,9 @@ variables:
   buildConfiguration: 'Release'
   
 steps:
-
+- script: |
+    echo  '$(System.DefaultWorkingDirectory)'
+    workingDirectory: Booking.Server/
 - task: UseDotNet@2
   inputs:
     version: '5.0.x'
@@ -17,11 +19,7 @@ steps:
   inputs:
     version: '3.0.x'
     packageType: runtime
-- task: CmdLine@2
-  inputs:
-    script: |
-      echo  '$(System.DefaultWorkingDirectory)'
-      dir    
+
 - task: DotNetCoreCLI@2
   inputs:
     command: 'restore'
