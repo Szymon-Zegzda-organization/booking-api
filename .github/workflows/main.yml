@@ -30,7 +30,7 @@ jobs:
       with:
           name: catalog-api-artifact
           path: |
-              ./Booking.Server.DB/bin/
-              ./Booking.Server.API/bin/
-              ./Booking.Server.Test/bin/
+              Booking.Server.DB/bin/Debug/net6.0/Booking.Server.DB.dll
+              Booking.Server.API/bin/Debug/net6.0/Booking.Server.API.dll
+              Booking.Server.Test/bin/Debug/net6.0/Booking.Server.Test.dll
               
