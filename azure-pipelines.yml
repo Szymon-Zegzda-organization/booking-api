@@ -34,13 +34,20 @@ steps:
     command: test
     projects: '**/*Test/*.csproj'
     arguments: '--configuration $(buildConfiguration) --logger trx'
-- task: PublishBuildArtifacts@1
+
+- task: CopyFiles@2
+  displayName: 'Copy Files to: $(Build.ArtifactStagingDirectory)'
   inputs:
-    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-    ArtifactName: 'drop'
-    publishLocation: 'Container'
+    SourceFolder: '$(Build.SourcesDirectory)'
+    Contents: |
+      ./Booking.Server/Booking.Server.DB/bin/**/*
+      ./Booking.Server/Booking.Server.API/bin/**/*
+      ./Booking.Server/Booking.Server.Test/bin/**/*
+
+    TargetFolder: '$(Build.ArtifactStagingDirectory)'
+
 - task: PublishPipelineArtifact@1
   inputs:
-    targetPath: '$(Pipeline.Workspace)'
-    artifact: 'artifac'
-    publishLocation: 'pipeline'
+    targetPath: '$(Build.ArtifactStagingDirectory)'
+    artifactName: artifacts
+  displayName: 'Publish artifact'
