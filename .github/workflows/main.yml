@@ -1,4 +1,4 @@
-name: Build
+name: booking-api-test-build-artifacts
 
 on:
   workflow_dispatch:
@@ -24,8 +24,12 @@ jobs:
       run: dotnet build --no-restore
     - name: Test
       run: dotnet test --logger trx --results-directory "artifact"
-    - name: Upload test logs
-      uses: actions/upload-artifact@v3
-      with:
-            name: artifact
-            path: Booking.Server/artifact
+    - name: Upload artifacts
+        uses: actions/upload-artifact@v3
+        with:
+            name: catalog-api-artifact
+            path: |
+              Booking.Server.Test\bin\Debug\net6.0\Booking.Server.Test.dll
+              Booking.Server.API\bin\Debug\net6.0\Booking.Server.API.dll
+              Booking.Server.Test\bin\Debug\net6.0\Booking.Server.Test.dll
+              
