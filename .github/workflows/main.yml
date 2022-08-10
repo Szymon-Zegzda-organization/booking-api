@@ -25,18 +25,18 @@ jobs:
     - name: Test
       run: dotnet test --logger trx --results-directory "artifact"
     - name: Publish_1 
-      run: dotnet publish "./Booking.Server.API/Booking.Server.API.csproj" -c release -o /app --no-restore
+      run: dotnet publish "./Booking.Server.API/Booking.Server.API.csproj" -c release -o ./ --no-restore
     - name: Publish_2
-      run: dotnet publish "./Booking.Server.DB/Booking.Server.DB.csproj" -c release -o /app --no-restore
+      run: dotnet publish "./Booking.Server.DB/Booking.Server.DB.csproj" -c release -o ./ --no-restore
     - name: Publish_3
-      run:  dotnet publish "./Booking.Server.Test/Booking.Server.Test.csproj" -c release -o /app --no-restore
+      run:  dotnet publish "./Booking.Server.Test/Booking.Server.Test.csproj" -c release -o ./ --no-restore
     
     - name: Upload artifacts
       uses: actions/upload-artifact@v3
       with:
           name: catalog-api-artifact
           path: |
-              /app/Booking.Server.DB.dll
-              /app/Booking.Server.API.dll
-              /app/Booking.Server.Test.dll
+              ./Booking.Server.DB.dll
+              ./Booking.Server.API.dll
+              ./Booking.Server.Test.dll
               
