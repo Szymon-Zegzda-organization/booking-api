@@ -32,5 +32,5 @@ jobs:
           path: |
               ./Booking.Server/Booking.Server.DB/bin/Debug/net6.0/Booking.Server.DB.dll
               ./Booking.Server/Booking.Server.API/bin/Debug/net6.0/Booking.Server.API.dll
-              Booking.Server.Test/bin/Debug/net6.0/Booking.Server.Test.dll
+              ./Booking.Server/Booking.Server.Test/bin/Debug/net6.0/Booking.Server.Test.dll
               
