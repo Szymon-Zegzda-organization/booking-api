@@ -40,7 +40,7 @@ steps:
   inputs:
     SourceFolder: '$(Build.SourcesDirectory)'
     Contents: |
-      Bookig.Server\bin\**\*
+      Bookig.Server\Bookig.Server\bin\**\*
 
     TargetFolder: '$(Build.ArtifactStagingDirectory)'
 
