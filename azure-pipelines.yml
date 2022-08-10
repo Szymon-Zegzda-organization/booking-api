@@ -40,9 +40,7 @@ steps:
   inputs:
     SourceFolder: '$(Build.SourcesDirectory)'
     Contents: |
-      Booking.Server.DB/bin/**/*
-      Booking.Server.API/bin/**/*
-      Booking.Server.Test/bin/**/*
+      Bookig.Server\bin\**\*
 
     TargetFolder: '$(Build.ArtifactStagingDirectory)'
 
