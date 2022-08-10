@@ -25,9 +25,9 @@ jobs:
     - name: Test
       run: dotnet test --logger trx --results-directory "artifact"
     - name: Publish_1 
-       run: dotnet publish "./Booking.Server.API/Booking.Server.API.csproj" -c release -o /app --no-restore
+      run: dotnet publish "./Booking.Server.API/Booking.Server.API.csproj" -c release -o /app --no-restore
     - name: Publish_2
-       run: dotnet publish "./Booking.Server.DB/Booking.Server.DB.csproj" -c release -o /app --no-restore
+      run: dotnet publish "./Booking.Server.DB/Booking.Server.DB.csproj" -c release -o /app --no-restore
     - name: Publish_3
       run:  dotnet publish "./Booking.Server.Test/Booking.Server.Test.csproj" -c release -o /app --no-restore
     
