@@ -1,7 +1,10 @@
 name: booking-api-test-build-artifacts
 
 on:
-  workflow_dispatch:
+  pull_request:
+    paths-ignore:
+      - 'scripts/**'
+      - 'middleware/**'
 
 defaults:
   run:
