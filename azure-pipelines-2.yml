@@ -17,7 +17,7 @@ stages:
   jobs:  
   - job: Build
     displayName: Build, Push
-    pool: ubuntu-latest
+    pool: Default
     steps:
     - task: Docker@2
       displayName: Build an image
