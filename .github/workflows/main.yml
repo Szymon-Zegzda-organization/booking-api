@@ -25,6 +25,8 @@ jobs:
       run: dotnet restore
     - name: Build
       run: dotnet build --no-restore
+    - name: Publsih
+      run: dotnet publish -c Release
     - name: Test
       run: dotnet test --logger trx --results-directory "artifact"
     
