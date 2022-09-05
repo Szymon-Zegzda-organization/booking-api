@@ -8,8 +8,7 @@ RUN dotnet restore "./Booking.Server/Booking.Server.DB/Booking.Server.DB.csproj"
 RUN dotnet restore "./Booking.Server/Booking.Server.Test/Booking.Server.Test.csproj" --disable-parallel
 
 RUN dotnet publish "./Booking.Server/Booking.Server.API/Booking.Server.API.csproj" -c release -o /app --no-restore
-RUN dotnet publish "./Booking.Server/Booking.Server.DB/Booking.Server.DB.csproj" -c release -o /app --no-restore
-RUN dotnet publish "./Booking.Server/Booking.Server.Test/Booking.Server.Test.csproj" -c release -o /app --no-restore
+
 
 # Build runtime image
 FROM mcr.microsoft.com/dotnet/aspnet:6.0
